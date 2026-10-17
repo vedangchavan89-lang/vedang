@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find academic notices, events, examination updates, holidays and placement announcements in one place.">
+  <title>Digital Notice Board | Stay Informed</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR AND NAVIGATION -->
+  <div class="announcement-bar">
+    <p>Stay updated with the latest announcements!</p>
+    <a href="#notices">Explore notices →</a>
+  </div>
+
+  <header class="header" id="home">
+    <div class="container navbar">
+      <a href="#home" class="brand">
+        <img src="logo.png" alt="Digital Notice Board logo">
+        <span>Digital <strong>Notice Board</strong></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#notices">Notices</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#notices" class="nav-button">View Notices ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero section">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <span class="eyebrow">YOUR CAMPUS. YOUR UPDATES.</span>
+
+          <h1>
+            Every important update.
+            <span>One clear place.</span>
+          </h1>
+
+          <p>
+            Discover academic updates, examination schedules, campus
+            events and important announcements without missing a thing.
+          </p>
+
+          <form class="search-box" id="heroSearchForm">
+            <label class="sr-only" for="heroSearch">Search notices</label>
+            <input
+              type="search"
+              id="heroSearch"
+              placeholder="Search notices, exams, events..."
+            >
+            <button type="submit">Search →</button>
+          </form>
+
+          <div class="hero-points">
+            <span>✓ Easy search</span>
+            <span>✓ Smart categories</span>
+            <span>✓ Important deadlines</span>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85"
+            alt="Students on a college campus"
+          >
+          <div class="floating-card">
+            <span class="floating-icon">✓</span>
+            <div>
+              <strong>Stay informed</strong>
+              <p>All your updates in one place.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUICK BENEFITS -->
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <div><span>▤</span><strong>Centralized Notices</strong><p>Everything together</p></div>
+        <div><span>⌕</span><strong>Quick Search</strong><p>Find updates faster</p></div>
+        <div><span>▦</span><strong>Smart Categories</strong><p>Browse with ease</p></div>
+        <div><span>◷</span><strong>Clear Deadlines</strong><p>Keep dates in view</p></div>
+      </div>
+    </section>
+
+    <!-- 3. NOTICE CATEGORIES -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">BROWSE YOUR WAY</span>
+          <h2>Explore notice <span>categories.</span></h2>
+          <p>Find the announcements that matter to you.</p>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card" data-category="Academics">
+            <span class="category-icon">📚</span>
+            <h3>Academics</h3>
+            <p>Classes and resources</p>
+          </button>
+
+          <button class="category-card" data-category="Examinations">
+            <span class="category-icon">📝</span>
+            <h3>Examinations</h3>
+            <p>Timetables and results</p>
+          </button>
+
+          <button class="category-card" data-category="Events">
+            <span class="category-icon">🎉</span>
+            <h3>Events</h3>
+            <p>Campus activities</p>
+          </button>
+
+          <button class="category-card" data-category="Holidays">
+            <span class="category-icon">☀️</span>
+            <h3>Holidays</h3>
+            <p>Breaks and closures</p>
+          </button>
+
+          <button class="category-card" data-category="Placements">
+            <span class="category-icon">💼</span>
+            <h3>Placements</h3>
+            <p>Careers and opportunities</p>
+          </button>
+
+          <button class="category-card" data-category="General">
+            <span class="category-icon">📢</span>
+            <h3>General</h3>
+            <p>Other announcements</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. IMPORTANT ANNOUNCEMENTS -->
+    <section class="section important-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">DON'T MISS THESE</span>
+          <h2>Important <span>announcements.</span></h2>
+          <p>Priority updates you should know about.</p>
+        </div>
+
+        <div class="notice-grid" id="pinnedNotices">
+          <!-- Important notices will be added using JavaScript. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SEARCHABLE LATEST NOTICES -->
+    <section class="section notices-section" id="notices">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">THE NOTICE BOARD</span>
+          <h2>Latest <span>notices.</span></h2>
+          <p>Search, filter and find announcements quickly.</p>
+        </div>
+
+        <div class="notice-controls">
+          <label class="sr-only" for="noticeSearch">Search all notices</label>
+          <input
+            type="search"
+            id="noticeSearch"
+            placeholder="Search by notice title or keyword..."
+          >
+
+          <label class="sr-only" for="categoryFilter">Filter by category</label>
+          <select id="categoryFilter">
+            <option value="All">All categories</option>
+            <option value="Academics">Academics</option>
+            <option value="Examinations">Examinations</option>
+            <option value="Events">Events</option>
+            <option value="Holidays">Holidays</option>
+            <option value="Placements">Placements</option>
+            <option value="General">General</option>
+          </select>
+
+          <label class="sr-only" for="sortNotices">Sort notices</label>
+          <select id="sortNotices">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="priority">Priority first</option>
+          </select>
+        </div>
+
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-pill active" data-filter="All">All</button>
+          <button class="filter-pill" data-filter="Academics">Academics</button>
+          <button class="filter-pill" data-filter="Examinations">Examinations</button>
+          <button class="filter-pill" data-filter="Events">Events</button>
+          <button class="filter-pill" data-filter="Holidays">Holidays</button>
+          <button class="filter-pill" data-filter="Placements">Placements</button>
+          <button class="filter-pill" data-filter="General">General</button>
+        </div>
+
+        <div class="notice-grid" id="noticeGrid" aria-live="polite">
+          <!-- Notice cards will be generated using JavaScript. -->
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>No notices found</h3>
+          <p>Try another keyword or category.</p>
+          <button id="clearFilters">Clear filters</button>
+        </div>
+
+        <div class="load-more-wrap">
+          <button class="outline-button" id="loadMore">
+            Show all notices ↓
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. UPCOMING EVENTS -->
+    <section class="section events-section" id="events">
+      <div class="container events-content">
+        <div>
+          <span class="eyebrow">MARK YOUR CALENDAR</span>
+          <h2>What's coming <span>next?</span></h2>
+          <p>
+            Keep track of upcoming campus activities, important dates
+            and scheduled events.
+          </p>
+          <a href="#notices" class="primary-button">
+            Explore announcements →
+          </a>
+        </div>
+
+        <div class="event-image">
+          <img
+            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=85"
+            alt="Students participating in a campus gathering"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ABOUT THE PLATFORM -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=85"
+            alt="Students collaborating in an educational setting"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-content">
+          <span class="eyebrow">WHY DIGITAL NOTICE BOARD?</span>
+          <h2>Less searching. <span>More knowing.</span></h2>
+          <p>
+            Digital Notice Board brings academic updates, exam schedules,
+            events, holidays and career opportunities together in one
+            organized, easy-to-use platform.
+          </p>
+
+          <ul>
+            <li><strong>✓ Organized information</strong><span>Browse notices by category.</span></li>
+            <li><strong>✓ Fast discovery</strong><span>Search by title and keywords.</span></li>
+            <li><strong>✓ Important dates</strong><span>Keep deadlines visible.</span></li>
+          </ul>
+
+          <a href="#notices" class="text-link">Browse the notice board →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT AND FOOTER -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-content">
+        <div>
+          <span class="eyebrow">NEED HELP?</span>
+          <h2>Have a question or an update?</h2>
+          <p>Contact your institution's notice administrator for assistance.</p>
+        </div>
+        <a href="mailto:noticeboard@example.com" class="light-button">
+          Contact the team →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="brand footer-brand">
+          <img src="logo.png" alt="">
+          <span>Digital <strong>Notice Board</strong></span>
+        </a>
+        <p>Clear updates. Connected communities.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#notices">Latest notices</a>
+        <a href="#categories">Categories</a>
+      </div>
+
+      <div>
+        <h3>Information</h3>
+        <a href="#about">About us</a>
+        <a href="#contact">Contact</a>
+        <a href="#events">Upcoming events</a>
+      </div>
+
+      <div>
+        <h3>Stay informed</h3>
+        <p>Visit the notice board regularly for new announcements.</p>
+        <a href="#notices" class="text-link">See what's new →</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="currentYear">2026</span> Digital Notice Board. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Notice details popup -->
+  <dialog id="noticeDialog" class="notice-dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Close">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<a href="#" class="brand">
+  <img src="logo.png" alt="Digital Notice Board Logo">
+  <span>Digital Notice Board</span>
+</a>
